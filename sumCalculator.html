@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summe ausrechnen</title>
+
+    <script>
+        // Aufgabe: Erstelle zwei input-Felder, in der der User Zahlen eintagen soll
+        // Erstelle einen +-Knopf, wenn er geklickt wird, soll die Summe der eingetragenen
+        // input-Felder in einem Paragraph ausgegeben werden
+
+        function addNumbers() {
+            // Werte der Input-Felder abrufen mit Hilfe der parseFloat Methode/Funktion, um aus einem String einen
+            // Floatwert zu erhalten
+            const num1 = parseFloat(document.querySelector('#number1').value) || 0;
+            const num2 = parseFloat(document.querySelector('#number2').value) || 0;
+            // Addition der Zahlen
+            const sum = num1 + num2;
+            // Ergebnis im Ergebnisfeld anzeigen
+            document.querySelector('#result').value = sum;
+        }
+
+        function resetFields() {
+            document.querySelector('#result').value = ''
+            document.querySelector('#number1').value = ''
+            document.querySelector('#number2').value = ''
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h2>Aufgabe: Summe ausrechnen!</h2>
+    <input id="number1" type="number" placeholder="Bitte trage eine Zahl ein!"/>
+    <br>
+    <input id="number2" type="number" placeholder="Bitte trage eine Zahl ein!"/>
+    <br>
+    <button type="button" onClick='addNumbers()'>Summe berechnen!</button>
+    <br>
+    <br>
+    <input type="text" id="result" placeholder="Ergebnis" readonly>
+    <br>
+    <button type="reset" onClick='resetFields()'>Zurücksetzen</button>
+
+</body>
+</html>
