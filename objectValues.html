@@ -6,5 +6,35 @@
 </head>
 <body>
 
+<p id="demo"></p>
+
+<script>
+    // Create an Object
+    const person = {
+        name: "John",
+        age: 30,
+        city: "New York",
+        gender: "male"
+    };
+
+    // Create an Array; object.values gibt die Values (Werte zu den Attributen) aus
+    const myArray = Object.values(person);
+    console.log(myArray);
+    console.log(myArray[0]);
+    console.log(myArray[1]);
+    console.log(myArray[2]);
+    console.log(myArray[3]);
+    console.log(myArray.length);
+
+    // Display the Array
+    document.querySelector("#demo").innerHTML = myArray;
+
+    // Auslesen aller Werte eines Arrays per Schleife (for-i)
+    for (let i = 0; i < myArray.length; i++) {
+        console.log(myArray[i]);
+    }
+
+</script>
+
 </body>
 </html>
