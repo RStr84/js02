@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>JavaScript Objects</h1>
+<h2>The Object.entries() Method</h2>
+<p>Object.entries() makes it simple to use objects in loops:</p>
+
+<p id="demo"></p>
+
+<script>
+    const fruits = {Bananas:300, Oranges:200, Apples:500};
+
+    let text = "";
+    // for-of geht alle Parameter-Wert-Kombinationen durch und schreibt sie in ein Array
+
+    for (let [fruit, amount] of Object.entries(fruits)) {
+        console.log(fruit + ' ' + amount);
+        text += fruit + ": " + amount + "<br>";
+    }
+
+    document.querySelector("#demo").innerHTML = text;
+</script>
+
+</body>
+</html>
