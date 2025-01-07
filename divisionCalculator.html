@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        // Aufgabe: Erstelle zwei input-Felder, in der der User Zahlen eintragen soll
+        // Erstelle einen +-Knopf, wenn er geklickt wird, soll der Quotient der eingetragenen
+        // input-Felder in einen Paragraph ausgegeben werden
+
+        let zahl1 = 3.3;
+        let zahl2 = 0.1;
+        let zahl3 = 0;
+        let zahl4 = -4;
+        let zahl5 = -3.3;
+        let zahl6 = '';
+        let zahl7 = 'a';
+
+        const divide = function (number1, number2) {
+            // toFixed ist eine Methode, die ich auf jede Zahl anwenden kann
+            // es wird ein String zurückgegeben
+
+            console.log((number1 / number2).toFixed(2));
+            // bei number2 = 0 ist das ergebnis infinity
+
+            console.log(typeof (number1 / number2).toFixed(2));
+            // abfangen bei Divisionsergebnis (-)infinity
+
+            if ((number1 / number2) === Infinity || -Infinity) {
+                console.log('ohje');
+                console.log(typeof (number1 / number2));
+            } else {
+                console.log('achje');
+            }
+            // man kann auch abfangen, ob number2 den wWert 0 hat
+
+        }
+        divide(zahl1, zahl3);
+
+        function resetFields() {
+            document.querySelector('#result').value = ''
+            document.querySelector('#number1').value = ''
+            document.querySelector('#number2').value = ''
+        }
+
+    </script>
+</head>
+<body>
+
+    <h2>Aufgabe: Division!</h2>
+<!--    <input id="number1" type="number" placeholder="Bitte trage eine Zahl ein!"/>-->
+<!--    <br>-->
+<!--    <input id="number2" type="number" placeholder="Bitte trage eine Zahl ein!"/>-->
+<!--    <br>-->
+<!--    <button type="button" onClick='addNumbers()'>Summe berechnen!</button>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <input type="text" id="result" placeholder="Ergebnis" readonly>-->
+<!--    <br>-->
+<!--    <button type="reset" onClick='resetFields()'>Zurücksetzen</button>-->
+
+
+</body>
+</html>
