@@ -26,6 +26,24 @@
             document.querySelector('#number2').value = ''
         }
 
+        // parseInt, parseFloat , Number(<string>)
+        let wert = "3.1";
+        let wert1 = '';
+        let wert2 = '23a';
+
+        console.log(parseInt(wert2));
+        // parseInt ignoriert den Kommaanteil
+        // bei wert als Leerstring wird NaN ausgegeben
+        // bei wert als Zahl-String Kombination wird die Zahl genommen
+
+        console.log(parseFloat(wert2) + ' ' + typeof parseFloat(wert2));
+        // bei wert als Leerstring wird NaN ausgegeben (Not a Number)
+        // bei wert als Zahl-String Kombination (erst Zahl, dann String) wird die Zahl genommen
+
+        console.log(Number(wert2) + ' ' + typeof Number(wert2));
+        // bei wert als Leerstring wird 0 ausgeben
+        // bei wert als Zahl-String Kombination wird NaN ausgegeben
+
     </script>
 
 </head>
