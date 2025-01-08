@@ -16,15 +16,29 @@
             inputs.forEach(input => input.value = '');
         }
 
-        const getProducts = function()
-        {
+        function addNewRow() {
+            const newRow = document.createElement('div');
+            newRow.className = 'productRow';
+
+            newRow.innerHTML = `
+        <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
+        <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
+        <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
+        <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
+        <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
+        <br>`;
+
+            document.getElementById('productRowsContainer').appendChild(newRow);
+        }
+
+        const getProducts = function () {
             // Eingaben auslesen
             const artikelnamen = document.querySelectorAll('.artikelname');
             const einzelpreise = document.querySelectorAll('.einzelpreis');
             const anzahlen = document.querySelectorAll('.anzahl');
             const produkte = document.querySelectorAll('.produkt');
 
-            const einzelpreisWerte =[];
+            const einzelpreisWerte = [];
             const anzahlenWerte = [];
 
             for (let i = 0; i < einzelpreise.length; i++) {
@@ -49,37 +63,40 @@
 <h2>Kassenzettel</h2>
 
 <form id="productForm">
+    <div id="productRowsContainer">
 
-    <div class="productRow">
-        <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
-        <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
-        <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
-        <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
-        <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
-        <br>
-    </div>
+        <div class="productRow">
+            <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
+            <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
+            <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
+            <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
+            <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
+            <br>
+        </div>
 
-    <div class="productRow">
-        <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
-        <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
-        <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
-        <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
-        <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
-        <br>
-    </div>
+        <div class="productRow">
+            <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
+            <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
+            <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
+            <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
+            <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
+            <br>
+        </div>
 
-    <div class="productRow">
-        <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
-        <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
-        <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
-        <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
-        <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
-        <br>
+        <div class="productRow">
+            <input type="text" class="artikelname" placeholder="Artikelname" style="width: 250px"/>
+            <input type="number" class="einzelpreis" placeholder="Einzelpreis" style="width: 120px"/>
+            <input type="number" class="anzahl" placeholder="Anzahl" style="width: 75px"/>
+            <input type="text" class="produkt" placeholder="Produkt" readonly style="width: 120px">
+            <button type="button" onClick='resetRow(this)'>Zurücksetzen</button>
+            <br>
+        </div>
     </div>
 
     <br>
     <button type="button" onClick='getProducts()'>Berechne Produkte!</button>
     <button type="reset" onClick='resetAllFields()'>Alles Zurücksetzen</button>
+    <button type="button" onClick='addNewRow()'>Artikel hinzufügen</button>
 
 </form>
 
